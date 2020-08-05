@@ -2,7 +2,7 @@ const grid = document.querySelector(".grid");
 const squares = document.querySelectorAll(".grid div");
 const result = document.querySelector(".result");
 const player = document.querySelector("#player");
-const playerdiv = document.getElementsByClassName("playerdiv");
+const playerdiv = document.querySelector(".playerdiv");
 const play_again = document.querySelector(".splay-again");
 
 let current_player = 1;
@@ -113,7 +113,8 @@ function checkBoard() {
     ) {
       result.textContent = "Player 1 wins!!!";
       grid.style.display = "none";
-      playerdiv.style.display = "none";
+
+      playerdiv.innerHTML = "";
     } else if (
       square1.classList.contains("player-two") &&
       square2.classList.contains("player-two") &&
@@ -122,7 +123,8 @@ function checkBoard() {
     ) {
       result.textContent = "Player 2 wins!!!";
       grid.style.display = "none";
-      playerdiv.style.display = "none";
+
+      playerdiv.innerHTML = "";
     }
   }
 }
